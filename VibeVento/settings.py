@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-^-@hgbja!qqum^u#ceta=x%ddrtiax4%qnobwv*@aekt#vyscd
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://vibevento.onrender.com','https://*.127.0.0.1']
 
 
 # Application definition

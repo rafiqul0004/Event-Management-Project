@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{%load crispy_forms_tags%}
+
+{%block content%}
+<h1>Organize Event Page</h1>
+{% comment %} <a class="btn btn-primary" href="{% url 'edit_profile' %}">Edit Profile</a> {% endcomment %}
+
+<div class="d-flex flex-wrap justify-content-center px-5 pt-5">
+
+    {%for event in data%}
+
+    <div class="col-sm-3">
+        <div class="card m-2">
+          <div class="card-body">
+            <h5 class="card-title"> Name : {{event.name}}</h5>
+            <p class="card-text">Description : {{event.description }}</p>
+            <p class="card-text">Organizer : {{event.organizer.first_name}} {{event.organizer.first_name}}</p>
+            <p class="card-text">Date : {{event.date }}</p>
+            <p class="card-text">Time : {{event.time }}</p>
+            <p class="card-text">Location : {{event.locations }}</p>
+            <p class="card-text">Public : {{event.is_public }}</p>
+            <a href={%url 'attendee_list' event.id%} class="btn btn-primary">Attendee : {{event.attendee_count}}</a>
+            <p class="card-text"> Tags : {{event.tags }}</p>
+            <p>
+                Category: {%for cat in event.category.all %}
+
+                <button class="btn btn-primary btn-sm" disabled>{{cat.name}}</button>
+
+                {% endfor %}
+            </p>
+
+            <a href="{% url 'edit_events' event.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_events' event.id %}" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+</div>
+
+ 
+
+{%endblock%}

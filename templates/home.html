@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="d-flex flex-wrap align-items-center px-3 pt-4">
+  <div class="col-6">
+<h1>Welcome to Vibevento</h1>
+<p>Vibe Vento, our cutting-edge event management project, offers an immersive platform that seamlessly integrates user registration, login, and logout functionalities for a secure and personalized experience. The user-friendly interface features a dedicated navbar, allowing effortless event addition. Organizers benefit from advanced control options, including the ability to edit, delete, and access attendee lists within the "Organize Event" tag. The user profile section further enhances convenience by displaying a comprehensive list of accepted events, fostering a cohesive and efficient environment for event coordination and management. Dive into Vibe Vento and elevate your event planning experience.</p>
+  </div>
+  <div class="col-6">
+
+    <img class="img-fluid" src="{% static 'header.jpg'%}" alt="Logo">
+
+  </div>
+</div>
+
+<div class="d-flex flex-column align-items-center m-auto">
+    <h5>All Categories</h5>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select Category
+        </button>
+        <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+            {% for cat in categories %}
+                <a class="dropdown-item" href="{% url 'category_wise_event' cat.slug %}">{{ cat.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class='d-flex flex-wrap p-4'>
+  <div class="col-10 p-3">
+    <h4>{{data | length}} results found</h4>
+    <div class="d-flex flex-wrap pt-5 ">
+      {% for event in data %}
+      <div class="col-sm-3">
+        <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body ">
+            <h5 class="card-title"> Name : {{event.name}}</h5>
+            <p class="card-text">Description : {{event.description | truncatewords:10 }}</p>
+            <p class="card-text">Organizer : {{event.organizer.first_name}} {{event.organizer.last_name}}</p>
+            <p class="card-text">Date : {{event.date }}</p>
+            <p class="card-text">Attende : {{event.attendee_count}}</p>
+            <p class="card-text"> Tags : {{event.tags }}</p>
+            <p>
+            <p>
+              Category : {% for cat in event.category.all %}
+              <button class="btn btn-primary btn-sm m-2" disabled>
+                {{cat.name}}
+              </button>
+              {% endfor %}
+            </p>
+            <a href="{%url 'detail_event' event.id %}" class="btn btn-success">Detail</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{%load crispy_forms_tags%}
+
+{%block content%}
+<h1>Profile Page</h1>
+<a class="btn btn-primary" href="{% url 'edit_profile' %}">Edit Profile</a>
+<div class='d-flex flex-wrap p-4'>
+  <div class="col-10 p-3">
+    <h4>{{data | length}} results found</h4>
+    <div class="d-flex flex-wrap pt-5 ">
+      {% for event in data %}
+      <div class="col-sm-3">
+        <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body ">
+            <h5 class="card-title"> Name : {{event.event.name}}</h5>
+            <p class="card-text">Description : {{event.event.description | truncatewords:10 }}</p>
+            <p class="card-text">Organizer : {{event.event.organizer.first_name}} {{event.event.organizer.last_name}}</p>
+            <p class="card-text">Date : {{event.event.date }}</p>
+            <p class="card-text">Attende : {{event.event.attendee_count}}</p>
+            <p class="card-text"> Tags : {{event.event.tags }}</p>
+            <p>
+            <p>
+              Category : {% for cat in event.event.category.all %}
+              <button class="btn btn-primary btn-sm m-2" disabled>
+                {{cat.name}}
+              </button>
+              {% endfor %}
+            </p>
+            <a href="{%url 'detail_event' event.id %}" class="btn btn-success">Detail</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+ 
+
+{%endblock%}

@@ -1,22 +1,52 @@
 {% extends "base.html" %}
 
 {% load static %}
-
 {% block content %}
 
+
+{% comment %} Carosoul {% endcomment %}
+<div class="w-auto mt-2">
+  <div class="swiffy-slider slider-item-reveal slider-nav-round slider-item-ratio slider-item-ratio-21x9" id="slider1">
+    <ul class="slider-container">
+        <li><img src="{% static 'slide1.jpg'%}" loading="lazy" alt="..."></li>
+        <li><img src="{% static 'slide2.jpg'%}" loading="lazy" alt="..."></li>
+        <li><img src="{% static 'slide3.jpg'%}" loading="lazy" alt="..."></li>
+    </ul>
+  
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+  
+    <div class="slider-indicators slider-indicators-square d-none d-md-flex">
+        <button class="" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class="active"></button>
+    </div>
+  
+    <div class="slider-indicators slider-indicators-sm slider-indicators-dark slider-indicators-round d-md-none slider-indicators-highlight">
+        <button class="" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class="active"></button>
+    </div>
+  </div>
+</div>
 <div class="d-flex flex-wrap align-items-center px-3 pt-4">
-  <div class="col-6">
-<h1>Welcome to Vibevento</h1>
+  <div class="col-12">
+<h1 class="text-center">Welcome to Vibevento</h1>
 <p>Vibe Vento, our cutting-edge event management project, offers an immersive platform that seamlessly integrates user registration, login, and logout functionalities for a secure and personalized experience. The user-friendly interface features a dedicated navbar, allowing effortless event addition. Organizers benefit from advanced control options, including the ability to edit, delete, and access attendee lists within the "Organize Event" tag. The user profile section further enhances convenience by displaying a comprehensive list of accepted events, fostering a cohesive and efficient environment for event coordination and management. Dive into Vibe Vento and elevate your event planning experience.</p>
   </div>
-  <div class="col-6">
+  {% comment %} <div class="col-6">
 
     <img class="img-fluid" src="{% static 'header.jpg'%}" alt="Logo">
 
-  </div>
+  </div> {% endcomment %}
 </div>
-
-<div class="d-flex flex-column align-items-center m-auto">
+<hr>
+<div class="mt-3 text-center">
+ <h2>Upcoming Events</h2>
+</div>
+<div class="d-flex flex-column align-items-center mt-5 m-auto">
     <h5>All Categories</h5>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,13 +68,14 @@
       <div class="col-sm-3">
         <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
           <div class="card-body ">
-            <h5 class="card-title"> Name : {{event.name}}</h5>
+            <h5 class="card-title bg-warning"> Name : {{event.name}}</h5>
+            <hr>
             <p class="card-text">Description : {{event.description | truncatewords:10 }}</p>
             <p class="card-text">Organizer : {{event.organizer.first_name}} {{event.organizer.last_name}}</p>
             <p class="card-text">Date : {{event.date }}</p>
             <p class="card-text">Attende : {{event.attendee_count}}</p>
             <p class="card-text"> Tags : {{event.tags }}</p>
-            <p>
+            <hr>
             <p>
               Category : {% for cat in event.category.all %}
               <button class="btn btn-primary btn-sm m-2" disabled>
@@ -61,6 +92,186 @@
   </div>
 </div>
 
+<hr>
+<div class="mt-3 text-center">
+  <h2>Our Services</h2>
+</div>
+<div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein">
+  <ul class="slider-container py-4">
+      <li class="">
+          <div class="card shadow h-100">
+              <div class="ratio ratio-16x9">
+                  <img src="{%static 'slide1.jpg'%}" class="card-img-top" loading="lazy" alt="...">
+              </div>
+              <div class="card-body p-3 p-xl-5">
+                  <h3 class="card-title h5">About Conference</h3>
+                  <p class="card-text">Conferences foster knowledge exchange, networking, and collaboration. Experts share insights, innovations emerge, and communities thrive in dynamic, informative gatherings.</p>
+                  <div><a href="#" class="btn btn-primary">Explore</a>
+                  </div>
+              </div>
+          </div>
+      </li>
+      <li class="">
+        <div class="card shadow h-100">
+            <div class="ratio ratio-16x9">
+                <img src="{%static 'slide1.jpg'%}" class="card-img-top" loading="lazy" alt="...">
+            </div>
+            <div class="card-body p-3 p-xl-5">
+                <h3 class="card-title h5">About Conference</h3>
+                <p class="card-text">Conferences foster knowledge exchange, networking, and collaboration. Experts share insights, innovations emerge, and communities thrive in dynamic, informative gatherings.</p>
+                <div><a href="#" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="">
+      <div class="card shadow h-100">
+          <div class="ratio ratio-16x9">
+              <img src="{%static 'slide1.jpg'%}" class="card-img-top" loading="lazy" alt="...">
+          </div>
+          <div class="card-body p-3 p-xl-5">
+              <h3 class="card-title h5">About Conference</h3>
+              <p class="card-text">Conferences foster knowledge exchange, networking, and collaboration. Experts share insights, innovations emerge, and communities thrive in dynamic, informative gatherings.</p>
+              <div><a href="#" class="btn btn-primary">Explore</a>
+              </div>
+          </div>
+      </div>
+  </li>
+  <li class="">
+    <div class="card shadow h-100">
+        <div class="ratio ratio-16x9">
+            <img src="{%static 'slide1.jpg'%}" class="card-img-top" loading="lazy" alt="...">
+        </div>
+        <div class="card-body p-3 p-xl-5">
+            <h3 class="card-title h5">About Conference</h3>
+            <p class="card-text">Conferences foster knowledge exchange, networking, and collaboration. Experts share insights, innovations emerge, and communities thrive in dynamic, informative gatherings.</p>
+            <div><a href="#" class="btn btn-primary">Explore</a>
+            </div>
+        </div>
+    </div>
+</li>
+  </ul>
 
+  <button type="button" class="slider-nav" aria-label="Go left"></button>
+  <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+  <div class="slider-indicators">
+      <button class="" aria-label="Go to slide"></button>
+      <button aria-label="Go to slide" class="active"></button>
+      <button aria-label="Go to slide" class=""></button>
+      <button aria-label="Go to slide" class=""></button>
+      <button aria-label="Go to slide" class=""></button>
+  </div>
+</div>
+
+<hr>
+<div class="mt-3 text-center">
+  <h2>Client Reviews</h2>
+</div>
+<div class="w-75 swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein m-auto">
+  <ul class="slider-container py-4">
+      <li class="">
+          <div class="card shadow h-100">
+              <div class="review-card">
+                <img src="{% static 'Review/man1.jpeg'%}" alt="">
+                <h4>Mr. Jone</h4>
+                <p>Message : Good</p>
+                <h6> Ratting: ⭐⭐⭐⭐</h6>
+              </div>
+          </div>
+      </li>
+      <li class="">
+        <div class="card shadow h-100">
+            <div class="review-card">
+              <img src="{% static 'Review/man1.jpeg'%}" alt="">
+              <h4>Mr. Jone</h4>
+              <p>Message : Good</p>
+              <h6> Ratting: ⭐⭐⭐⭐</h6>
+            </div>
+        </div>
+    </li>
+    <li class="">
+      <div class="card shadow h-100">
+          <div class="review-card">
+            <img src="{% static 'Review/man1.jpeg'%}" alt="">
+            <h4>Mr. Jone</h4>
+            <p>Message : Good</p>
+            <h6> Ratting: ⭐⭐⭐⭐</h6>
+          </div>
+      </div>
+  </li>
+  <li class="">
+    <div class="card shadow h-100">
+        <div class="review-card">
+          <img src="{% static 'Review/man1.jpeg'%}" alt="">
+              <h4>Mr. Jone</h4>
+              <p>Message : Good</p>
+              <h6> Ratting: ⭐⭐⭐⭐</h6>
+        </div>
+    </div>
+</li>
+  </ul>
+
+  <button type="button" class="slider-nav" aria-label="Go left"></button>
+  <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+  <div class="slider-indicators">
+      <button class="" aria-label="Go to slide"></button>
+      <button aria-label="Go to slide" class="active"></button>
+      <button aria-label="Go to slide" class=""></button>
+      <button aria-label="Go to slide" class=""></button>
+      <button aria-label="Go to slide" class=""></button>
+  </div>
+</div>
+
+
+<hr>
+{% comment %} Contact Us {% endcomment %}
+<h2 class="text-center">Contact Us</h2>
+<div class='w-50 m-auto'>
+  <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+    <!-- Name Input -->
+    <div class="form-floating mb-3">
+      <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+      <label for="name">Name</label>
+      <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+    </div>
+
+    <!-- Email Input -->
+    <div class="form-floating mb-3">
+      <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+      <label for="emailAddress">Email Address</label>
+      <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+      <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+    </div>
+
+    <!-- Message Input -->
+    <div class="form-floating mb-3">
+      <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+      <label for="message">Message</label>
+      <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+    </div>
+
+    <!-- Submit success message -->
+    <div class="d-none" id="submitSuccessMessage">
+      <div class="text-center mb-3">
+        <div class="fw-bolder">Form submission successful!</div>
+        <p>To activate this form, sign up at</p>
+        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+      </div>
+    </div>
+
+    <!-- Submit error message -->
+    <div class="d-none" id="submitErrorMessage">
+      <div class="text-center text-danger mb-3">Error sending message!</div>
+    </div>
+
+    <!-- Submit button -->
+    <div class="text-center">
+      <button class="btn btn-primary disabled" id="submitButton" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

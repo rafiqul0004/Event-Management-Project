@@ -43,47 +43,50 @@
   </div> {% endcomment %}
 </div>
 <hr>
-<div class="mt-3 text-center">
- <h2>Upcoming Events</h2>
+<div style="background-color: #ED4A43; padding: 20px; text-align: center; color: #fff;">
+  <h2 style="font-weight: bold;">Upcoming Events</h2>
+  <div class="d-flex flex-column align-items-center mt-5 m-auto">
+      <h5 style="font-weight: bold;">All Categories</h5>
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:black; color: #fff; border-color: black; font-weight: bold;">
+              Select Category
+          </button>
+          <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+              {% for cat in categories %}
+                  <a class="dropdown-item" href="{% url 'category_wise_event' cat.slug %}" style="color: #333; font-weight: bold;">{{ cat.name }}</a>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
 </div>
-<div class="d-flex flex-column align-items-center mt-5 m-auto">
-    <h5>All Categories</h5>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select Category
-        </button>
-        <div class="dropdown-menu" aria-labelledby="categoryDropdown">
-            {% for cat in categories %}
-                <a class="dropdown-item" href="{% url 'category_wise_event' cat.slug %}">{{ cat.name }}</a>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+
+
 
 <div class='d-flex flex-wrap p-4'>
   <div class="col-10 p-3">
-    <h4>{{data | length}} results found</h4>
+    <h4>{{ data | length }} results found</h4>
     <div class="d-flex flex-wrap pt-5 ">
       {% for event in data %}
       <div class="col-sm-3">
         <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
-          <div class="card-body ">
-            <h5 class="card-title bg-warning"> Name : {{event.name}}</h5>
+          <img src="{{ event.image.url }}" class="card-img-top" alt="event_image">
+          <div class="card-body">
+            <h5 class="card-title bg-warning text-white p-2 mb-3">{{ event.name }}</h5>
+            <p class="card-text">{{ event.description | truncatewords:10 }}</p>
+            <p class="card-text"><strong>Organizer:</strong> {{ event.organizer.first_name }} {{ event.organizer.last_name }}</p>
+            <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+            <p class="card-text"><strong>Attendees:</strong> {{ event.attendee_count }}</p>
+            <p class="card-text"><strong>Tags:</strong> {{ event.tags }}</p>
             <hr>
-            <p class="card-text">Description : {{event.description | truncatewords:10 }}</p>
-            <p class="card-text">Organizer : {{event.organizer.first_name}} {{event.organizer.last_name}}</p>
-            <p class="card-text">Date : {{event.date }}</p>
-            <p class="card-text">Attende : {{event.attendee_count}}</p>
-            <p class="card-text"> Tags : {{event.tags }}</p>
-            <hr>
-            <p>
-              Category : {% for cat in event.category.all %}
+        
+            <p><strong>Category:</strong>
+              {% for cat in event.category.all %}
               <button class="btn btn-primary btn-sm m-2" disabled>
-                {{cat.name}}
+                  {{ cat.name }}
               </button>
               {% endfor %}
-            </p>
-            <a href="{%url 'detail_event' event.id %}" class="btn btn-success">Detail</a>
+          </p>
+            <a href="{% url 'detail_event' event.id %}" class="btn btn-success">Detail</a>
           </div>
         </div>
       </div>
@@ -91,9 +94,27 @@
     </div>
   </div>
 </div>
-
+<div class="container">
+   <h2 class="text-center mb-5">7/24 EVENT AVAILABLE</h2> 
+   <div class="row"> 
+    <div class="col-md-4 text-center"> 
+      <i class="fas fa-map-marker-alt fa-3x mb-3"></i> 
+      <h4>GREAT LOCATIONS</h4> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed vel velit.</p> 
+    </div> 
+    <div class="col-md-4 text-center"> 
+      <i class="fas fa-users fa-3x mb-3"></i> 
+      <h4>MORE THEN 200 SPEAKERS</h4> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed vel velit.</p> 
+    </div> 
+    <div class="col-md-4 text-center"> <i class="fas fa-glass-martini fa-3x mb-3"></i> 
+      <h4>LETS PARTY AFTER EVENT</h4> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed vel velit.</p> 
+    </div> 
+  </div> 
+</div>
 <hr>
-<div class="mt-3 text-center">
+<div style="background-color: #ED4A43; padding: 20px; text-align: center; color: #fff;" class="mt-3 text-center">
   <h2>Our Services</h2>
 </div>
 <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein">
@@ -165,7 +186,7 @@
 </div>
 
 <hr>
-<div class="mt-3 text-center">
+<div style="background-color: #ED4A43; padding: 20px; text-align: center; color: #fff;" class="mt-3 text-center">
   <h2>Client Reviews</h2>
 </div>
 <div class="w-75 swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein m-auto">
@@ -227,7 +248,8 @@
 
 <hr>
 {% comment %} Contact Us {% endcomment %}
-<h2 class="text-center">Contact Us</h2>
+
+<h2 style="background-color: #ED4A43; padding: 20px; text-align: center; color: #fff;" class="text-center">Contact Us</h2>
 <div class='w-50 m-auto'>
   <form id="contactForm" data-sb-form-api-token="API_TOKEN">
 

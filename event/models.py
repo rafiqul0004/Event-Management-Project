@@ -5,6 +5,7 @@ from category.models import Category
 class Event(models.Model):
     organizer = models.ForeignKey(User,on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
+    image=models.ImageField(upload_to='event/media/upload',null=True,blank=True)
     date=models.DateField()
     time=models.TimeField()
     location = models.CharField(max_length=200)

@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
-{%load crispy_forms_tags%}
-{%load static %}
-{%block content%}
-<div class="form-card">
-    <form style="width:50%; margin:auto;" method="post">
-        <h1>{{type}} Page</h1>
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class="form-card" style="background-color: #ED4A43; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 50%; margin: auto;">
+    <form method="post" style="color: black; font-weight: bold;">
+        <h1 style="text-align: center; margin-bottom: 30px; font-weight: bold; color: black;">{{ type }} Page</h1>
     
         {% csrf_token %}
     
-        {{form|crispy}}
+        {{ form|crispy }}
     
-        <button type="submit" class="btn btn-warning mb-4">{{type}}</button>
-    
+        <button type="submit" class="btn btn-warning mb-4" style="width: 100%; background-color: #ffc107; border-color: #ffc107; font-weight: bold;">{{ type }}</button>
     </form>
 </div>
-{%endblock%}
+{% endblock %}

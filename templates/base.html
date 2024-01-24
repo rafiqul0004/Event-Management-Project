@@ -31,6 +31,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{%url 'homepage'%}">Home</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{%url 'about_us' %}">About Us</a>
+              </li>
               {%if user.is_authenticated%}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_events'%}">Add Event</a>

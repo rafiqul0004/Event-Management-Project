@@ -6,44 +6,86 @@
 
 {% comment %} Carosoul {% endcomment %}
 <div class="container mt-5" data-aos="fade-up">
-  <div class="">
-    <div class="swiffy-slider slider-item-reveal slider-nav-round slider-item-ratio slider-item-ratio-21x9" id="slider1">
+  <div class="container">
+    <div class="swiffy-slider slider-nav-round slider-nav-animation slider-nav-animation-fadein slider-item-first-visible ">
       <ul class="slider-container">
-          <li><img src="{% static 'slide1.jpg'%}" loading="lazy" alt="..."></li>
-          <li><img src="{% static 'slide2.jpg'%}" loading="lazy" alt="..."></li>
-          <li><img src="{% static 'slide3.jpg'%}" loading="lazy" alt="..."></li>
+          <li class="slide-visible">
+              <div class="card rounded-0 h-80">
+                  <div class="row g-0 h-100">
+                      <div class="col-md-6 col-xl-5 d-flex align-items-center p-2 p-md-3 p-xl-5">
+                          <div class="card-body p-1 p-md-3 p-xl-5">
+                              <p class="lead">Event On Mind</p>
+                              <h2 class="card-title" style="color:#DF1E1E;">ViveVento</h2>
+                              <p class="card-text mt-3">Unveiling Elegance: A Gala Evening</p>
+                              <p>Prepare to be swept away by an evening of opulence and glamour at our upcoming gala event, "Unveiling Elegance." Join us for an enchanting night filled with live music, gourmet dining, and captivating performances in an exquisite venue. Dress in your finest attire and immerse yourself in an atmosphere of sophistication, as we create unforgettable memories in celebration of elegance and refined indulgence.</p>
+                              <p class="card-text"><small class="text-muted">Remember to check out</small></p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-xl-7">
+                          <img src="{% static 'slide1.jpg'%}" class="card-img d-none d-md-block" loading="lazy" style="height: 100%; object-fit: cover;" alt="...">
+                      
+                      </div>
+                  </div>
+              </div>
+          </li>
+          <li>
+              <div class="card rounded-0 h-80">
+                  <div class="row g-0 h-100">
+                      <div class="col-md-6 col-xl-7">
+                          <img src="{% static 'slide2.jpg'%}" class="card-img d-none d-md-block" loading="lazy" style="height: 100%; object-fit: cover" alt="...">
+                        
+                      </div>
+                      <div class="col-md-6 col-xl-5 d-flex align-items-center p-2 p-md-3 p-xl-5">
+                          <div class="card-body p-1 p-md-3 p-xl-5">
+                              <p class="lead">Dreaming about Festival</p>
+                              <h2 class="card-title" style="color:#DF1E1E;">Tech Innovators Summit: Shaping the Future</h2>
+                              <p class="card-text mt-3">Embark on a journey of technological exploration at the "Tech Innovators Summit: Shaping the Future." This groundbreaking event brings together visionaries, thought leaders, and industry experts for a dynamic exchange of ideas, showcasing the latest advancements in technology. From keynote presentations to interactive workshops, join us as we delve into the forefront of innovation and collectively pave the way for a transformative future.</p>
+                              <p class="card-text"><small class="text-muted">Handcrafted like good thing</small></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </li>
+          <li>
+              <div class="card rounded-0 h-80 text-dark">
+                  <img src="{% static 'slide3.jpg'%}" class="card-img h-100" style="max-height: 100%; max-width: 100%; object-fit: cover" alt="...">
+                  <div class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column">
+                      <h2 class="card-title h1 d-block d-md-inline-block">The Aston Martin DB5</h2>
+                      <p class="card-text lead col-md-8 col-lg-6">The Aston Martin DB5 is a British luxury grand tourer (GT) that was made by Aston Martin and designed by the Italian coachbuilder Carrozzeria Touring Superleggera. </p>
+                  </div>
+              </div>
+          </li>
       </ul>
-    
+  
       <button type="button" class="slider-nav" aria-label="Go left"></button>
       <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
-    
-      <div class="slider-indicators slider-indicators-square d-none d-md-flex">
-          <button class="" aria-label="Go to slide"></button>
-          <button aria-label="Go to slide" class=""></button>
-          <button aria-label="Go to slide" class=""></button>
-          <button aria-label="Go to slide" class="active"></button>
+  
+      <div class="slider-indicators">
+          <button class="active" aria-label="Go to slide"></button>
+          <button aria-label="Go to slide"></button>
+          <button aria-label="Go to slide"></button>
       </div>
-    
-      <div class="slider-indicators slider-indicators-sm slider-indicators-dark slider-indicators-round d-md-none slider-indicators-highlight">
-          <button class="" aria-label="Go to slide"></button>
-          <button aria-label="Go to slide" class=""></button>
-          <button aria-label="Go to slide" class=""></button>
-          <button aria-label="Go to slide" class="active"></button>
-      </div>
+  </div>
+  </div>
+  <div class="container">
+    <marquee class="slide-text">"An event is a planned occurrence, often involving a gathering of people for a specific purpose or celebration. It can range from social gatherings like weddings and parties to more formal occasions such as conferences or concerts, providing opportunities for shared experiences and meaningful interactions."</marquee>
+  </div>
+  <div class="d-flex flex-wrap align-items-center px-3 pt-4" data-aos="fade-up">
+    <div class="col-12">
+        <h1 class="text-center">Welcome to Vibevento</h1>
+        <p>Vibe Vento, our cutting-edge event management project, offers an immersive platform that seamlessly integrates user registration, login, and logout functionalities for a secure and personalized experience. The user-friendly interface features a dedicated navbar, allowing effortless event addition. Organizers benefit from advanced control options, including the ability to edit, delete, and access attendee lists within the "Organize Event" tag. The user profile section further enhances convenience by displaying a comprehensive list of accepted events, fostering a cohesive and efficient environment for event coordination and management. Dive into Vibe Vento and elevate your event planning experience.</p>
     </div>
-  </div>
-  <div class="d-flex flex-wrap align-items-center px-3 pt-4">
-  <div class="col-12">
-  <h1 class="text-center">Welcome to Vibevento</h1>
-  <p>Vibe Vento, our cutting-edge event management project, offers an immersive platform that seamlessly integrates user registration, login, and logout functionalities for a secure and personalized experience. The user-friendly interface features a dedicated navbar, allowing effortless event addition. Organizers benefit from advanced control options, including the ability to edit, delete, and access attendee lists within the "Organize Event" tag. The user profile section further enhances convenience by displaying a comprehensive list of accepted events, fostering a cohesive and efficient environment for event coordination and management. Dive into Vibe Vento and elevate your event planning experience.</p>
-  </div>
     {% comment %} <div class="col-6">
   
       <img class="img-fluid" src="{% static 'header.jpg'%}" alt="Logo">
   
     </div> {% endcomment %}
   </div>
+  </div>
 </div>
+
+
+
 {% comment %} Recent {% endcomment %}
 <div class="container" data-aos="fade-up">
   <h1 class="text-center">Recent Events</h1>

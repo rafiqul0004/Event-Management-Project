@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<section class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <!-- Image Column -->
+        <div class="col-lg-6">
+          <div class="swiffy-slider slider-nav-visible slider-nav-animation slider-nav-animation-slow slider-item-last-visible" id="animatedText">
+
+            <ul class="slider-container" id="container1">
+                <li id="slide2" class="">
+                    <div>
+                        <img src="{% static 'Vibe1.jpeg'%}" alt="..." loading="lazy" class="w-100">
+                        <h1 class="display-1 text-dark custom-animated-text position-absolute top-50 start-50 translate-middle">Seminar</h1>
+                    </div>
+                </li>
+                <li id="slide3" class="">
+                    <div>
+                        <img src="{% static 'vibe2.jpeg'%}" alt="..." loading="lazy" class="w-100">
+                        <h1 class="display-1 text-dark custom-animated-text position-absolute top-50 start-50 translate-middle">Conference</h1>
+                    </div>
+                </li>
+                <li id="slide4" class="">
+                    <div>
+                        <img src=".{% static 'vibe3.jpeg'%}" alt="..." loading="lazy" class="w-100">
+                        <h1 class="display-1 text-dark custom-animated-text position-absolute top-50 start-50 translate-middle">Meetings</h1>
+                    </div>
+                </li>
+                <li id="slide5" class="slide-visible">
+                    <div>
+                        <img src="{% static 'vibe4.jpeg'%}" alt="..." loading="lazy" class="w-100">
+                        <h1 class="display-1 text-dark custom-animated-text position-absolute top-50 start-50 translate-middle">Parties</h1>
+                    </div>
+                </li>
+            </ul>
+        
+            <button type="button" class="slider-nav" aria-label="Go to previous"></button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
+        
+            <div class="slider-indicators">
+                <button aria-label="Go to slide" class=""></button>
+                <button aria-label="Go to slide" class=""></button>
+                <button aria-label="Go to slide" class=""></button>
+                <button aria-label="Go to slide" class=""></button>
+                <button aria-label="Go to slide" class="active"></button>
+            </div>
+        
+        </div>
+        </div>
+        <!-- Text Column -->
+        <div class="col-lg-6 about-text m-auto">
+          <h2 class="mb-4">Welcome to Our Story</h2>
+          <p>Experience the vibrant tapestry of our community at the "Community Harmony Festival: Unity in Diversity." This inclusive event celebrates the rich mosaic of cultures, traditions, and backgrounds that make our community unique.</p>
+          <p>Engage in cultural displays, sample diverse cuisines, and participate in activities that foster understanding and connection. Join us in promoting unity through the appreciation of our differences, as we come together for a day of joy, respect, and shared humanity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{%endblock%}

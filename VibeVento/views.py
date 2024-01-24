@@ -9,3 +9,6 @@ def home(request,category_slug=None):
         data=Event.objects.filter(category=category)
     categories=Category.objects.all()
     return render(request,'home.html',{'data':data, 'categories':categories})
+
+def about_us(request):
+    return render(request,'about_us.html')

@@ -101,25 +101,37 @@
 
       {% comment %} Footer File {% endcomment %}
       <footer class="full-footer">
-              <div class="footer mt-3">
-                <div class="company-name  m-5 "><h3>ViveVento</h3></div>
-              <div class="social-link m-5 ">
-                <h3>Social Links</h3>
-                <i class="bi bi-facebook"></i>
+        <div class="footer mt-3">
+          <div class="company-name  m-5 "><h3>VibeVento</h3></div>
+        <div class="social-link m-5 ">
+          <h3>Social Links</h3>
+            <a href="https://www.facebook.com">
+            <i class="bi bi-facebook"></i>
+            </a>
+
+            <a href="https://wa.me/your_whatsapp_number">
                 <i class="bi bi-whatsapp"></i>
+            </a>
+
+            <a href="https://www.instagram.com">
                 <i class="bi bi-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com">
                 <i class="bi bi-linkedin"></i>
-              </div>
-              <div class=" company m-5">
-                <h3>Company</h3>
-                <li>Home</li>
-                <li>Services</li>
-                <li>Contact Us</li>
-                <li>Company</li>
-              </div>
-              </div>
-              <div class="owner text-center"><h4>  © {% now "Y" %} Modified by Rahat</h4></div>
-      </footer>
+            </a>
+        </div>
+        <div class=" company m-5">
+          <h3>Company</h3>
+          <li><a href="{%url 'homepage'%}">Home</a></li>
+          <li><a href="{%url 'about_us'%}">Services</a></li>
+          <li><a href="{%url 'about_us'%}">About Us</a></li>
+          <li><a href="{%url 'about_us'%}">Company</a></li>
+        </div>
+        </div>
+        <div class="owner text-center"><h4>  © {% now "Y" %} Modified by Rahat</h4></div>
+</footer>
+
 
     {% comment %} Script File {% endcomment %}
     {% comment %} <script>

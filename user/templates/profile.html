@@ -3,34 +3,36 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4">Profile Page</h1>
-    <a class="btn btn-primary mb-4" href="{% url 'edit_profile' %}">Edit Profile</a>
-
-    <div class='d-flex flex-wrap'>
-        {% for event in data %}
-        <div class="col-sm-4 mb-4">
-            <div class="card shadow p-3 bg-white rounded">
-                <img src="{{ event.event.image.url }}" class="card-img-top" alt="Event Image">
-                <div class="card-body">
-                    <h5 class="card-title">Name: {{ event.event.name }}</h5>
-                    <p class="card-text">Description: {{ event.event.description | truncatewords:10 }}</p>
-                    <p class="card-text">Organizer: {{ event.event.organizer.first_name }} {{ event.event.organizer.last_name }}</p>
-                    <p class="card-text">Date: {{ event.event.date }}</p>
-                    <p class="card-text">Attendees: {{ event.event.attendee_count }}</p>
-                    <p class="card-text">Tags: {{ event.event.tags }}</p>
-                    <p>
-                      Category : {% for cat in event.event.category.all %}
-                      <button class="btn btn-primary btn-sm m-2" disabled>
-                        {{cat.name}}
-                      </button>
-                      {% endfor %}
-                    </p>
-                    <a href="{% url 'detail_event' event.event.id %}" class="btn btn-success">Detail</a>
+<main>
+    <div class="container" style="margin-top:100px;">
+        <h1 class="mb-4">Profile Page</h1>
+        <a class="btn btn-primary mb-4" href="{% url 'edit_profile' %}">Edit Profile</a>
+    
+        <div class='d-flex flex-wrap'>
+            {% for event in data %}
+            <div class="col-sm-4 mb-4">
+                <div class="card shadow p-3 bg-white rounded">
+                    <img src="{{ event.event.image.url }}" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: {{ event.event.name }}</h5>
+                        <p class="card-text">Description: {{ event.event.description | truncatewords:10 }}</p>
+                        <p class="card-text">Organizer: {{ event.event.organizer.first_name }} {{ event.event.organizer.last_name }}</p>
+                        <p class="card-text">Date: {{ event.event.date }}</p>
+                        <p class="card-text">Attendees: {{ event.event.attendee_count }}</p>
+                        <p class="card-text">Tags: {{ event.event.tags }}</p>
+                        <p>
+                          Category : {% for cat in event.event.category.all %}
+                          <button class="btn btn-primary btn-sm m-2" disabled>
+                            {{cat.name}}
+                          </button>
+                          {% endfor %}
+                        </p>
+                        <a href="{% url 'detail_event' event.event.id %}" class="btn btn-success">Detail</a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
+</main>
 {% endblock %}

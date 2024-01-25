@@ -9,6 +9,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    height: 100vh;
 }
 
 /* Navbar styles */
@@ -196,6 +197,15 @@ body {
     transition-delay: .5s;
     text-align: center;
 }
+
+main{
+    flex: 1;
+    min-height: 500px;
+  }
+  
+  footer{
+    margin-top: auto;
+  }
 /*The end of animation*/
 
 #animatedText.slider-nav-animation .slider-container .slide-visible .custom-animated-text {

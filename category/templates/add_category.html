@@ -3,14 +3,18 @@
 {%load crispy_forms_tags%}
 
 {%block content%}
-<form style="width:50%; margin:auto;" method="post">
-    <h1>Add Category Page</h1>
-
-    {% csrf_token %}
-
-    {{form|crispy}}
-
-    <button type="submit" class="btn btn-warning">Submit</button>
-
-</form>
+<main>
+    <div style="margin-top:100px;">
+        <form style="width:50%; margin:auto;" method="post">
+            <h1>Add Category Page</h1>
+        
+            {% csrf_token %}
+        
+            {{form|crispy}}
+        
+            <button type="submit" class="btn btn-warning">Submit</button>
+        
+        </form>
+    </div>
+</main>
 {%endblock%}

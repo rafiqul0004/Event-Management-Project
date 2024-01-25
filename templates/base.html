@@ -20,57 +20,58 @@
 <body >
     
     {% comment %} Navbar Section {% endcomment %}
-    <nav class=" nav-color navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
           <a class="navbar-brand" href="#">VibeVento</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{%url 'homepage'%}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{%url 'about_us' %}">About Us</a>
-              </li>
-              {%if user.is_authenticated%}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_events'%}">Add Event</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'organize_event' %}">Organize Event</a>
-              </li>
-              {% endif %}
-            </ul>
-            <div class="d-flex">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                {%if user.is_authenticated%}
-                <li>
-                  <h5 class="text-white mx-5">Username : {{user.username}}</h5>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn btn-warning text-dark mx-2" href="{% url 'profile'%}">Profile</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn btn-primary text-dark" href="{% url 'logout'%}">Logout</a>
-                </li>
-                {%else%}
-                <li class="nav-item">
-                  <a class="nav-link btn btn-warning text-dark mx-2" href="{% url 'signup'%}">Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn  text-white" href="{% url 'login'%}">Log in</a>
-                </li>
-                {% endif %}
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{%url 'homepage'%}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{%url 'about_us' %}">About Us</a>
+                  </li>
+                  {%if user.is_authenticated%}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'add_events'%}">Add Event</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'organize_event' %}">Organize Event</a>
+                  </li>
+                  {% endif %}
               </ul>
-            </div>
+              <div class="d-flex">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      {%if user.is_authenticated%}
+                      <li>
+                          <h5 class="text-dark mx-3">Username : {{user.username}}</h5>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn btn-outline-warning mx-2" href="{% url 'profile'%}">Profile</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn btn-outline-primary" href="{% url 'logout'%}">Logout</a>
+                      </li>
+                      {%else%}
+                      <li class="nav-item">
+                          <a class="nav-link btn btn-outline-warning mx-2" href="{% url 'signup'%}">Register</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn btn-outline-primary" href="{% url 'login'%}">Log in</a>
+                      </li>
+                      {% endif %}
+                  </ul>
+              </div>
           </div>
-        </div>
-      </nav>
+      </div>
+  </nav>
+  
 
   {% for i in messages %}
       <div>

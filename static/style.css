@@ -202,6 +202,29 @@ body {
     opacity: 1;
     transform: none;
 }
+/* Light mode styles */
+body.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode span,
+body.dark-mode div {
+    color: #fff;
+}
 @media (max-width: 768px) {
     .navbar-nav .nav-link {
         margin-right: 0;

@@ -35,7 +35,7 @@ def register(request):
                 return redirect('signup')
     else:
         register_form=forms.RegistrationForm()
-    return render(request,'signup.html',{'form':register_form,'type':'Signup'})
+    return render(request,'signup.html',{'form':register_form,'type':'signup'})
 
 
 def activate(request,uid64,token):

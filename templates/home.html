@@ -164,34 +164,34 @@
       <div class='d-flex flex-wrap p-4'>
         <div class="col-10 p-3">
             <h4>{{ data | length }} results found</h4>
-            <div class="d-flex flex-wrap pt-5 data-aos="fade-up"">
+            <div class="d-flex flex-wrap pt-5" data-aos="fade-up">
               {% for event in data %}
-              <div class="col-sm-4">
-                <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
-                  <img src="{{ event.image.url }}" class="card-img-top" data-aos="fade-up" alt="event_image">
-                  <div class="card-body" data-aos="fade-up">
-                    <h5 class="card-title bg-warning text-white p-2 mb-3">{{ event.name }}</h5>
-                    <p class="card-text">{{ event.description | truncatewords:10 }}</p>
-                    <p class="card-text"><strong>Organizer:</strong> {{ event.organizer.first_name }} {{ event.organizer.last_name }}</p>
-                    <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
-                    <p class="card-text"><strong>Attendees:</strong> {{ event.attendee_count }}</p>
-                    <p class="card-text"><strong>Tags:</strong> {{ event.tags }}</p>
-                    <hr>
-                
-                    <p><strong>Category:</strong>
-                      {% for cat in event.category.all %}
-                      <button class="btn btn-primary btn-sm m-2" disabled>
-                          {{ cat.name }}
-                      </button>
-                      {% endfor %}
-                  </p>
-                    <a href="{% url 'detail_event' event.id %}" class="btn btn-success">Detail</a>
+              <div class="col-sm-4 mb-5">
+                  <div class="card m-2 shadow mb-5 bg-white rounded d-flex flex-column" style="height: 100%;">
+                      <img src="{{ event.image.url }}" class="card-img-top" data-aos="fade-up" alt="event_image">
+                      <div class="card-body" data-aos="fade-up">
+                          <h5 class="card-title bg-warning text-white p-2 mb-3">{{ event.name }}</h5>
+                          <p class="card-text">{{ event.description | truncatewords:10 }}</p>
+                          <p class="card-text"><strong>Organizer:</strong> {{ event.organizer.first_name }} {{ event.organizer.last_name }}</p>
+                          <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+                          <p class="card-text"><strong>Attendees:</strong> {{ event.attendee_count }}</p>
+                          <p class="card-text"><strong>Tags:</strong> {{ event.tags }}</p>
+                          <hr>
+                          <p><strong>Category:</strong>
+                              {% for cat in event.category.all %}
+                              <button class="btn btn-primary btn-sm m-2" disabled>
+                                  {{ cat.name }}
+                              </button>
+                              {% endfor %}
+                          </p>
+                          <a href="{% url 'detail_event' event.id %}" class="btn btn-success">Detail</a>
+                      </div>
                   </div>
-                </div>
               </div>
               {% endfor %}
-            </div>
-        </div>
+          </div>
+          
+       </div>
     </div>
 </div>
 
@@ -327,44 +327,58 @@
     <ul class="slider-container py-4">
         <li class="">
             <div class="card shadow h-100">
-                <div class="review-card text-dark">
-                  <img src="{% static 'Review/man1.jpeg'%}" alt="">
-                  <h4>Mr. Jone</h4>
-                  <p>Message : Good</p>
+                <div class="text-dark">
+                  <img class="review-card" src="{% static 'Review/women1.jpeg'%}" alt="">
+                  <h4>Mrs. Jini</h4>
+                  <p>Message : Awsome</p>
+                  <h6> Ratting: ⭐⭐⭐⭐⭐</h6>
+                </div>
+            </div>
+        </li>
+        <li class="">
+            <div class="card shadow h-100">
+                <div class="text-dark">
+                  <img class="review-card" src="{% static 'Review/man1.jpeg'%}" alt="">
+                  <h4>Alister</h4>
+                  <p>Message : Nice Event</p>
                   <h6> Ratting: ⭐⭐⭐⭐</h6>
                 </div>
             </div>
         </li>
         <li class="">
-          <div class="card shadow h-100">
-              <div class="review-card">
-                <img src="{% static 'Review/man1.jpeg'%}" alt="">
-                <h4>Mr. Jone</h4>
-                <p>Message : Good</p>
-                <h6> Ratting: ⭐⭐⭐⭐</h6>
-              </div>
-          </div>
-      </li>
-      <li class="">
-        <div class="card shadow h-100">
-            <div class="review-card">
-              <img src="{% static 'Review/man1.jpeg'%}" alt="">
-              <h4>Mr. Jone</h4>
-              <p>Message : Good</p>
-              <h6> Ratting: ⭐⭐⭐⭐</h6>
+            <div class="card shadow h-100">
+                <div class="text-dark">
+                  <img class="review-card" src="{% static 'Review/man2.jpeg'%}" alt="">
+                  <h4>Smith</h4>
+                  <p>Message : Want this like event</p>
+                  <h6> Ratting: ⭐⭐⭐⭐</h6>
+                </div>
             </div>
-        </div>
-    </li>
-    <li class="">
-      <div class="card shadow h-100">
-          <div class="review-card">
-            <img src="{% static 'Review/man1.jpeg'%}" alt="">
-                <h4>Mr. Jone</h4>
-                <p>Message : Good</p>
-                <h6> Ratting: ⭐⭐⭐⭐</h6>
-          </div>
-      </div>
-  </li>
+        </li>
+        <li class="">
+            <div class="card shadow h-100">
+                <div class="text-dark">
+                  <div>
+                    <img class="review-card" src="{% static 'Review/man3.jpeg'%}" alt="">
+                  </div>
+                  <h4>Max</h4>
+                  <p>Message : Seminar was good</p>
+                  <h6> Ratting: ⭐⭐⭐⭐</h6>
+                </div>
+            </div>
+        </li>
+        <li class="">
+            <div class="card shadow h-100">
+                <div class="text-dark">
+                  <div>
+                    <img class="review-card" src="{% static 'Review/man4.jpeg'%}" alt="">
+                  </div>
+                  <h4>Alex</h4>
+                  <p>Message : Need Anothe conference</p>
+                  <h6> Ratting: ⭐⭐⭐⭐</h6>
+                </div>
+            </div>
+        </li>
     </ul>
   
     <button type="button" class="slider-nav" aria-label="Go left"></button>
@@ -388,16 +402,16 @@
     <div class="slider-container">
         <div><img src="{%static 'Sponsor/logo1.jpg'%}" alt="..."></div>
         <div><img src="{%static 'Sponsor/logo2.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
-        <div><img src="{%static 'Sponsor/logo1.jpg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo3.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo4.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo5.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo6.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo7.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo8.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo9.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo10.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo11.jpeg'%}" loading="lazy" alt="..."></div>
+        <div><img src="{%static 'Sponsor/logo12.jpeg'%}" loading="lazy" alt="..."></div>
     </div>
 
     <button type="button" class="slider-nav" aria-label="Go left"></button>

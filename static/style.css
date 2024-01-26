@@ -206,6 +206,9 @@ main{
   footer{
     margin-top: auto;
   }
+.custom-card {
+    height: 100%;
+}
 /*The end of animation*/
 
 #animatedText.slider-nav-animation .slider-container .slide-visible .custom-animated-text {

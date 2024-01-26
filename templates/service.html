@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+<main>
+    <div style="margin-top: 100px;" class='row col-md-12 d-flex justify-content-center align-items-center'>
+        <div class="col-md-3 m-5 h-100 custom-card" style="width: 18rem;">
+            <img src="{% static 'Service/icon1.jpg'%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">"Elevate your event with our meticulous event management service, where seamless coordination meets creative innovation, ensuring every detail is a success in crafting memorable experiences."
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3 m-5 h-100 custom-card" style="width: 18rem;">
+            <img src="{% static 'Service/icon2.jpg'%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">"Entrust your vision to our seasoned event management professionals, <br>where expertise meets innovation, <br> ensuring every detail is seamlessly orchestrated for a flawless and memorable occasion."
+                </p>
+            </div>
+        </div>
+        <div class=" col-md-3 m-5 h-100 custom-card" style="width: 18rem;">
+            <img src="{% static 'Service/icon3.jpg'%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">"Effortlessly transform your vision into reality with our comprehensive event management services, meticulously curated to ensure a seamless schedule that  leaves a lasting impression on every attendee."
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

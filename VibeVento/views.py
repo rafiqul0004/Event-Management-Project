@@ -12,3 +12,5 @@ def home(request,category_slug=None):
 
 def about_us(request):
     return render(request,'about_us.html')
+def service(request):
+    return render(request,'service.html')

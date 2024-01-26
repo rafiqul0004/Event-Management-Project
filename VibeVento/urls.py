@@ -27,5 +27,6 @@ urlpatterns = [
     path('',views.home,name='homepage'),
     path('category/<slug:category_slug>',views.home,name='category_wise_event'),
     path('about_us',views.about_us,name='about_us'),
+    path('service',views.service,name='service'),
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

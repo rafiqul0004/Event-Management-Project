@@ -18,6 +18,11 @@
             {{ form|crispy }}
         
             <button type="submit" class="btn btn-warning mb-4" style="width: 100%; background-color: #ffc107; border-color: #ffc107; font-weight: bold;">{{ type }}</button>
+            {% if type == 'signup'%}
+                <a href="{% url 'login'%}">Already have an accoun? Login</a>
+            {% else %}
+            <a href="{% url 'signup'%}">Do not have an account? Register</a>
+            {%endif%}
         </form>
     </div>
 </div>

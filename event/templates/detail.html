@@ -3,8 +3,10 @@
 {% block content %}
 <div class="col-12 container" style="margin-top:100px;">
     <h1 class="container text-center">Invitation card</h1>
-    <p class="text-center text-primary">Please <a href="{%url 'login'%}">login</a> to accept the invitation</p>
-    <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
+    {% if not user.is_authenticated %}
+            <h5 class="card-text text-center">You need to be logged in to accept the invitation. <a href="{% url 'login' %}">Login</a></h5>
+    {%endif%}
+    <div class="card m-3 shadow p-3 mb-5 bg-white rounded">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="{{ event.image.url }}" class="card-img" alt="event_image">

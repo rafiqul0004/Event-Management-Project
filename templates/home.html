@@ -162,32 +162,45 @@
           </div>
       </div>
       <div class='d-flex flex-wrap p-4'>
-        <div class="col-10 p-3">
+        <div class="col-12 p-3">
             <h4>{{ data | length }} results found</h4>
             <div class="d-flex flex-wrap pt-5" data-aos="fade-up">
               {% for event in data %}
-              <div class="col-sm-4 mb-5">
-                  <div class="card m-2 shadow mb-5 bg-white rounded d-flex flex-column" style="height: 100%;">
-                      <img src="{{ event.image.url }}" class="card-img-top" data-aos="fade-up" alt="event_image">
-                      <div class="card-body" data-aos="fade-up">
-                          <h5 class="card-title bg-warning text-white p-2 mb-3">{{ event.name }}</h5>
-                          <p class="card-text">{{ event.description | truncatewords:10 }}</p>
-                          <p class="card-text"><strong>Organizer:</strong> {{ event.organizer.first_name }} {{ event.organizer.last_name }}</p>
-                          <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
-                          <p class="card-text"><strong>Attendees:</strong> {{ event.attendee_count }}</p>
-                          <p class="card-text"><strong>Tags:</strong> {{ event.tags }}</p>
-                          <hr>
-                          <p><strong>Category:</strong>
-                              {% for cat in event.category.all %}
-                              <button class="btn btn-primary btn-sm m-2" disabled>
-                                  {{ cat.name }}
-                              </button>
-                              {% endfor %}
-                          </p>
-                          <a href="{% url 'detail_event' event.id %}" class="btn btn-success">Detail</a>
-                      </div>
-                  </div>
-              </div>
+              <div class="col-sm-6 mb-5">
+                <div class="m-2 bg-white d-flex flex-column" style="height: 110%; border: none;">
+                    <div class="row">
+                        <!-- Column for Image -->
+                        <div class="col-md-6" style="height: 100%;">
+                            <img src="{{ event.image.url }}" class="card-img-top" style="height: 400px; object-fit: cover;" data-aos="fade-up" alt="event_image">
+                        </div>
+                        <!-- Column for Text -->
+                        <div class="col-md-6">
+                            <div class="card-body" data-aos="fade-up">
+                                <h5 class="card-title bg-warning text-white p-2 mb-3">{{ event.name }}</h5>
+                                <p class="card-text">{{ event.description | truncatewords:10 }}</p>
+                                <p class="card-text"><strong>Organizer:</strong> {{ event.organizer.first_name }} {{ event.organizer.last_name }}</p>
+                                <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+                                <p class="card-text"><strong>Attendees:</strong> {{ event.attendee_count }}</p>
+                                <p class="card-text"><strong>Tags:</strong> {{ event.tags }}</p>
+                                <hr>
+                                <p><strong>Category:</strong>
+                                    {% for cat in event.category.all %}
+                                    <button class="btn btn-primary btn-sm m-2" disabled>
+                                        {{ cat.name }}
+                                    </button>
+                                    {% endfor %}
+                                </p>
+                                <a href="{% url 'detail_event' event.id %}" class="btn" style="border: 1px solid #000; transition: background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#0000FF'; this.style.color='#FFFFFF'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Detail & Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
               {% endfor %}
           </div>
           

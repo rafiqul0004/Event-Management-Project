@@ -4,44 +4,36 @@ Welcome to VibeVento, an immersive web application designed to orchestrate seaml
 
 ## Features
 
-### User Authentication:
-🔐 **User Authentication:**
+### 🔐 User Authentication:
 1. 🎟️ Seamlessly register and log in to your account.
 2. 🛠 Distinguish between Event Organizers and Attendees.
 3. 🔒 Secure registration with email verification ensures a trusted user base.
 
-### Event Creation:
-📅 **Event Creation:**
+### 📅 Event Creation:
 1. 📅 Empower Event Organizers to effortlessly craft new events with detailed specifications.
 2. ➕ Flexibility to add event categories, tags, and define the event's visibility (public or private).
 
-### Event Details:
-📝 **Event Details:**
+### 📝 Event Details:
 1. 📝 Dive into the richness of each event with comprehensive details.
 2. 🕒 View event descriptions, date and time, location map, attendee count, and organizer information.
 3. 👥 Click on the attendee count field to reveal the names of attendees who have accepted the invitation.
 
-### Event Confirmation:
-✅ **Event Confirmation:**
+### ✅ Event Confirmation:
 1. ✅ Attendees are presented with clear options to either accept or decline event invitations.
 2. 🔢 Each accepted invitation contributes to the growing attendee count in the Event Model.
 
-### User Dashboard:
-📊 **User Dashboard:**
+### 📊 User Dashboard:
 1. 📊 Event Organizers enjoy a dedicated dashboard to manage and update their events effortlessly.
 2. 📋 Attendees benefit from a personalized dashboard that filters and displays upcoming events they have accepted.
 3. 🔄 User profiles can be easily updated for accurate and current information.
 
-### Event Categories and Tags:
-🏷️ **Event Categories and Tags:**
+### 🏷️ Event Categories and Tags:
 1. 🏷️ Events are intelligently categorized based on types such as conferences, parties, and workshops.
 
-### Live Chat Integration:
-💬 **Live Chat Integration:**
+### 💬 Live Chat Integration:
 1. 💬 Enhance communication and collaboration among users with our integrated live chat feature.
 
-### CRUD Operations:
-🛠️ **CRUD Operations:**
+### 🛠️ CRUD Operations:
 - **Create:**
   - 🎨 Event Organizers create captivating events with ease.
   - 🤵 Users set up profiles with personalized preferences and notification settings.

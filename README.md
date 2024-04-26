@@ -1,7 +1,8 @@
 ```markdown
 # VibeVento: A Harmonious Event Management Experience
 
-Eventify is a sophisticated web application tailored to streamline the intricate process of organizing and managing events. Elevate your event planning experience with a feature-rich platform that boasts user-friendly interfaces and cutting-edge functionalities.
+Eventify is a sophisticated web application tailored to streamline the intricate process of organizing and managing events.
+Elevate your event planning experience with a feature-rich platform that boasts user-friendly interfaces and cutting-edge functionalities.
 ## Features
 
 ### User Authentication:

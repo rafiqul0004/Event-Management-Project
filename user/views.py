@@ -15,6 +15,9 @@ from django.urls import reverse_lazy
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from event_tracking.models import EventTracking
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -31,8 +34,8 @@ def register(request):
                 email=EmailMultiAlternatives(email_subject,'',to=[user.email])
                 email.attach_alternative(email_body,'text/html')
                 email.send()
-                messages.success(request,'A mail sent to your account')
-                return redirect('signup')
+                messages.success(request,'A verification mail sent to your email')
+                return redirect('login')
     else:
         register_form=forms.RegistrationForm()
     return render(request,'signup.html',{'form':register_form,'type':'signup'})
@@ -69,8 +72,13 @@ class UserLoginView(LoginView):
         return context
     
 def profile(request):
-    data= EventTracking.objects.filter(user=request.user, accepted=True)
-    return render(request, 'profile.html', {'data': data})
+    # Fetch user details
+    user_details = User.objects.get(pk=request.user.pk)
+    
+    # Fetch event tracking data
+    event_tracking_data = EventTracking.objects.filter(user=request.user, accepted=True)
+    
+    return render(request, 'profile.html', {'user_details': user_details, 'data': event_tracking_data})
 
 @login_required   
 def organize_event(request):
@@ -98,3 +106,28 @@ def edit_profile(request):
     else:
         profile_form=forms.ChangeUserForm(instance=request.user)
     return render(request,'update_profile.html',{'form':profile_form})
+
+
+# --------------------------------Contact Form --------------------------------
+@require_POST
+def contact_us(request):
+    # Get form data
+    name = request.POST.get('name')
+    email = request.POST.get('emailAddress')
+    message = request.POST.get('message')
+
+    # You can add validation here if needed
+
+    # Send email
+    subject = f"Message from {name}"
+    message_body = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+    sender_email = email  # Using the email provided in the contact form as the sender's email address
+    recipient_email = ['kr.rafiqul@gmail.com']  # Recipient's email address
+
+    try:
+        send_mail(subject, message_body, sender_email, recipient_email)
+        # Email sent successfully
+        return JsonResponse({'success': True})
+    except Exception as e:
+        # Error sending email
+        return JsonResponse({'success': False, 'error_message': str(e)})

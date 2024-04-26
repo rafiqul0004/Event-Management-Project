@@ -216,6 +216,47 @@ main{
     height: 100%;
 }
 /*The end of animation*/
+.profile-card {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .card-body {
+    padding: 20px;
+}
+
+.profile-card .card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profile-card .card-text {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+}
+
+.profile-card .text-muted {
+    color: #666;
+}
+
+.profile-card .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.2rem;
+}
+
+.profile-card .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
 
 #animatedText.slider-nav-animation .slider-container .slide-visible .custom-animated-text {
     opacity: 1;

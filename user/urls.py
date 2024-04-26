@@ -12,4 +12,5 @@ urlpatterns = [
    # path('profile/edit/<int:id>',views.UpdateProfileView.as_view(),name='edit_profile'),
 #    path('profile/edit/pass_change',views.pass_change,name='pass_change'),
    path('active/<uid64>/<token>',views.activate,name='activate'),
+   path('contact-us/', views.contact_us, name='contact_us'),
 ]

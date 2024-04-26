@@ -9,12 +9,16 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Attendee Name</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email</th>
                 </tr>
             </thead>
             <tbody>
                 {% for attendee in attendees %}
                 <tr>
                     <td>{{ attendee.user.username }}</td>
+                    <td>{{ attendee.user.first_name }} {{ attendee.user.last_name }}</td>
+                    <td>{{ attendee.user.email }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,8 +1,7 @@
 ```markdown
 # VibeVento: A Harmonious Event Management Experience
 
-Welcome to VibeVento, an immersive web application designed to orchestrate seamless event management. Dive into the rhythm of event planning with an intuitive platform that combines elegance, functionality, and a touch of magic.
-
+Eventify is a sophisticated web application tailored to streamline the intricate process of organizing and managing events. Elevate your event planning experience with a feature-rich platform that boasts user-friendly interfaces and cutting-edge functionalities.
 ## Features
 
 ### User Authentication:

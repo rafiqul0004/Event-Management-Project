@@ -209,6 +209,8 @@
 </div>
 
 
+
+
 {% comment %} Logo for service {% endcomment %}
 <div class="container" data-aos="fade-up">
    <h2 class="text-center mb-5">7/24 EVENT AVAILABLE</h2> 
@@ -306,7 +308,7 @@
 {% comment %} Galary {% endcomment %}
 <div class="container galary-container mt-5 mb-5" data-aos="fade-up">
   <h1 class='text-center mb-3'>Our Galary</h1>
-  <div class="gallery">
+  <div class="gallery ">
     <div class="video-container">
         <video controls>
             <source src="{% static 'galary/g1.mp4'%}" type="video/mp4">
@@ -522,10 +524,13 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      always: true, // Only animate elements once
-    });
+    if (window.innerWidth > 576) { // Check if screen width is greater than 576px (Bootstrap's sm breakpoint)
+      AOS.init({
+        duration: 1000, // Animation duration in milliseconds
+        always: true, // Only animate elements once
+      });
+    }
   });
 </script>
+
 {% endblock %}

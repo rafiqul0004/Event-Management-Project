@@ -13,4 +13,7 @@ urlpatterns = [
 #    path('profile/edit/pass_change',views.pass_change,name='pass_change'),
    path('active/<uid64>/<token>',views.activate,name='activate'),
    path('contact-us/', views.contact_us, name='contact_us'),
+   path('change_password/', views.pass_change, name='change_password'),
+   path('forget_password/', views.reset_password, name='forget_password'),
+   path('passchange/<uid64>/<token>',views.pass_change2,name='passchange'),
 ]

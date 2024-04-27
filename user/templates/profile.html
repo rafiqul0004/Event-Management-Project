@@ -13,6 +13,7 @@
                 <p class="card-text">Full Name : {{ user_details.first_name }} {{ user_details.last_name }}</p>
                 <p class="card-text text-muted">Email : {{ user_details.email }}</p>
                 <a class="btn btn-primary" href="{% url 'edit_profile' %}">Edit Profile</a>
+                <a class="btn btn-primary" href="{% url 'change_password' %}">Change Password</a>
             </div>
         </div>
         

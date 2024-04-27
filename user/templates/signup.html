@@ -21,7 +21,8 @@
             {% if type == 'signup'%}
                 <a href="{% url 'login'%}">Already have an accoun? Login</a>
             {% else %}
-            <a href="{% url 'signup'%}">Do not have an account? Register</a>
+            <a href="{% url 'signup'%}">Do not have an account? Register</a> <br>
+            <a href="{% url 'forget_password'%}">Forgot Password</a>
             {%endif%}
         </form>
     </div>

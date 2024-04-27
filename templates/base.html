@@ -104,37 +104,59 @@
       {%endblock%}
 
       {% comment %} Footer File {% endcomment %}
-      <footer class="full-footer">
-        <div class="footer mt-3">
-          <div class="company-name  m-5 "><h3>VibeVento</h3></div>
-        <div class="social-link m-5 ">
-          <h3>Social Links</h3>
-            <a href="https://www.facebook.com">
-            <i class="bi bi-facebook"></i>
-            </a>
-
-            <a href="https://wa.me/your_whatsapp_number">
-                <i class="bi bi-whatsapp"></i>
-            </a>
-
-            <a href="https://www.instagram.com">
-                <i class="bi bi-instagram"></i>
-            </a>
-
-            <a href="https://www.linkedin.com">
-                <i class="bi bi-linkedin"></i>
-            </a>
+      <footer class="full-footer bg-dark text-light py-5 mt-3">
+        <style>
+            .footer-links a {
+                text-decoration: none; /* Remove underline from links */
+            }
+            .footer-col {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center; /* Align items in the center horizontally */
+            }
+            .social-links ul {
+                list-style: none; /* Remove default list style */
+                padding: 0; /* Remove default padding */
+            }
+        </style>
+        <div class="container">
+            <div class="row justify-content-center"> <!-- Center the row -->
+                <div class="col-md-4 footer-col">
+                    <h3 class="mb-4 text-center">VibeVento</h3>
+                    <p class="text-left">Bangladesh, Chittagong</p> <!-- Text left aligned -->
+                </div>
+                <div class="col-md-4 footer-col footer-links">
+                    <h3 class="mb-4 text-center">Social Links</h3>
+                    <ul class="list-unstyled text-center flex-column align-items-center social-links">
+                        <li><a href="https://www.facebook.com" class="text-light"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="https://wa.me/your_whatsapp_number" class="text-light"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com" class="text-light"><i class="bi bi-instagram"></i> Instagram</a></li>
+                        <li><a href="https://www.linkedin.com" class="text-light"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h3 class="mb-4 text-center">Company</h3>
+                    <ul class="list-unstyled text-center">
+                        <li><a href="{% url 'homepage'%}" class="text-light">Home</a></li>
+                        <li><a href="{% url 'service'%}" class="text-light">Services</a></li>
+                        <li><a href="{% url 'about_us'%}" class="text-light">About Us</a></li>
+                        <li><a href="{% url 'about_us'%}" class="text-light">Company</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class=" company m-5">
-          <h3>Company</h3>
-          <li><a href="{%url 'homepage'%}">Home</a></li>
-          <li><a href="{%url 'service'%}">Services</a></li>
-          <li><a href="{%url 'about_us'%}">About Us</a></li>
-          <li><a href="{%url 'about_us'%}">Company</a></li>
+        <div class="text-center mt-5">
+            <p class="mb-0">&copy; {% now "Y" %} VibeVento. Modified by Rahat</p>
         </div>
-        </div>
-        <div class="owner text-center"><h4>  © {% now "Y" %} Modified by Rahat</h4></div>
-</footer>
+    </footer>
+    
+    
+    
+    
+    
+    
+    
 
 
     {% comment %} Script File {% endcomment %}

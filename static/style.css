@@ -262,6 +262,19 @@ main{
     opacity: 1;
     transform: none;
 }
+/* Add this CSS to your stylesheet */
+.btn-primary {
+    background-color: #6a1eb6;
+    border-color: #6a1eb6; /* Optionally, set border color to match */
+    color: #fff; /* Optionally, set text color to white */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #491786; /* Optionally, darken color on hover/focus */
+    border-color: #491786; /* Optionally, darken border color on hover/focus */
+}
+
 /* Light mode styles */
 @media (max-width: 768px) {
     .navbar-nav .nav-link {
